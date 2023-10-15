@@ -4,6 +4,7 @@ import Contact from './contact';
 import Projects from './projects';
 import About from './about'; 
 
+
 const StyledFont = styled.div`
   font-family: "Palatino Linotype";
   font-size: 25px;

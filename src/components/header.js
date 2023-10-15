@@ -4,9 +4,6 @@ import logo from '../images/logo.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
-import Contact from './contact';
-import Projects from './projects';
-import About from './about'; 
 
 const StyledHeader = styled.header`
   display: flex;

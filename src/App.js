@@ -11,9 +11,9 @@ import Header from './components/header';
 class App extends React.Component {
   render( ) {
     return (
-      <div className="App">
-      <Header/>      
+      <div className="App">      
         <Router>
+        <Header/>
           <Routes>
             {/*set home as initial*/}
             <Route path="/" element={<Home />} />
