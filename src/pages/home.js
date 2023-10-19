@@ -7,8 +7,14 @@ import About from './about';
 
 const StyledFont = styled.div`
   font-family: "Palatino Linotype";
-  font-size: 25px;
+  font-size: 35px;
   color: #3A3B3C;
+  
+
+  @media (max-width: 768px) {
+      flex-direction: column;
+      padding: 30px;
+  }
 `;
 
 const Home = () => (

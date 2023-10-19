@@ -2,8 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 import BackgroundImage from '../images/background.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { faMobile } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faMobile } from '@fortawesome/free-solid-svg-icons';Y
 
 const StyledBackgroundImg = styled.div`
   background-image: url(${BackgroundImage});
@@ -13,12 +12,16 @@ const StyledBackgroundImg = styled.div`
 `;
 
 const StyledContact = styled.div`
-  padding: 0px 300px 10px 300px;
+  padding: 0px 300px 0px 300px;
   background-size: cover;
   height: auto;
   display: flex;
-  justify-content: column;
-  margin-top: 8px;
+  flex-direction: column;
+  align-items: start;
+
+  @media (max-width: 768px) {
+      padding: 30px;
+  }
 `;
 
 const StyledForm = styled.div`
@@ -26,13 +29,6 @@ const StyledForm = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  align-items: flex-start;
-  h1 {
-    text-align: left;
-  }
-  h3{
-    margin-bottom: 20px; 
-  }
 `;
 
 const StyledMobile = styled.div`
@@ -69,19 +65,18 @@ class Contact extends React.Component {
   render() {
     return (
       <StyledBackgroundImg>
-      <h1>Contact</h1>
-        <StyledContact>        
-          <StyledForm>
-            <h3>Say Hello to Me!</h3>
-            <StyledMobile>
-              <FontAwesomeIcon icon={ faMobile } size="1.5x"/>
-              Phone: +61 4 3552 0435 (Australia)
-            </StyledMobile>
-            <StyledMail>
-            <a href="mailto:sayamatsui19@yahoo.com"><FontAwesomeIcon icon={ faEnvelope } color="black" size="1.5x"/></a>Email: sayamatsui19@yahoo.com <br/>
-            </StyledMail>
-            
-          </StyledForm>
+        <StyledContact>   
+          <h1>Contact</h1>
+          <h3>Say Hello to Me!</h3>
+            <StyledForm>
+              <StyledMobile>
+                <FontAwesomeIcon icon={ faMobile } size="1.5x"/>
+                Phone: +61 4 3552 0435 (Australia)
+              </StyledMobile>
+              <StyledMail>
+              <a href="mailto:sayamatsui19@yahoo.com"><FontAwesomeIcon icon={ faEnvelope } color="black" size="1.5x"/></a>Email: sayamatsui19@yahoo.com <br/>
+              </StyledMail>
+            </StyledForm>
         </StyledContact>
       </StyledBackgroundImg>
     );

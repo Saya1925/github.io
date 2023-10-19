@@ -1,6 +1,4 @@
-import React from 'react';
-import './App.css';
-import { BrowserRouter as Router, Route, Routes, Switch  } from 'react-router-dom';
+import React, {useState} from 'react';
 import Home from './pages/home';
 import About from './pages/about';
 import Projects from './pages/projects';
@@ -8,26 +6,21 @@ import Contact from './pages/contact';
 import Header from './components/header';
 
 
-class App extends React.Component {
-  render( ) {
+function App() {
+
+    {/*set home as initial*/}  
+    const [currentPage, setCurrentPage] = useState('home');
+
     return (
-      <div className="App">      
-        <Router>
-        <Header/>
-          <Routes>
-            {/*set home as initial*/}
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/contact" element={<Contact />} />  
-            <Route path="/header" element={<Header />} />   
-            <Route path="*" element={<div>Not Found</div>} />
-          </Routes>
-        </Router>
+      <div className="App">
+        <Header setCurrentPage = {setCurrentPage}/>
+            {currentPage === 'home' && <Home/>}
+            {currentPage === 'about' && <About/>}
+            {currentPage === 'contact' && <Contact />}
+            {currentPage === 'projects' && <Projects/>}
       </div>
     )
   }
-}
 
 
 export default App;

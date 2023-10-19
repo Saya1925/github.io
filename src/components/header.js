@@ -2,13 +2,17 @@ import React from 'react';
 import styled from "styled-components"; 
 import logo from '../images/logo.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { Link } from 'react-router-dom';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 const StyledHeader = styled.header`
   display: flex;
   justify-content: space-between;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #FFFFFF;
 `;
 
 const StyledLogoImg = styled.img`
@@ -19,7 +23,7 @@ const StyledLogoImg = styled.img`
 `;
 
 const StyledButton = styled.button`
-  font-size: 25px;
+  font-size: 40px;
   font-family: "Yu Mincho";
   color: #3A3B3C;
   cursor: pointer;
@@ -38,17 +42,20 @@ const ButtonWrapper = styled.div`
   gap: 10px;
   `;
 
-const Header = () => (
+const Header = ({ setCurrentPage }) => (
       <StyledHeader>
           <StyledLogoImg src={logo} alt={logo}/>
           <ButtonWrapper>
-            <StyledButton as={Link} to="./about">About</StyledButton>
-            <StyledButton as={Link} to="./projects">Projects</StyledButton>
-            <StyledButton as={Link} to="./contact">Contact</StyledButton>
-            <StyledButton >Resume</StyledButton>
-            <StyledButton>
-              <a href="https://github.com/Saya1925" target="_blank" rel="noopener noreferrer">
-                <FontAwesomeIcon icon={ faGithub } size="2x" color="black"/></a></StyledButton>
+              <StyledButton onClick={() => setCurrentPage('about')}> About </StyledButton>
+              <StyledButton onClick={() => setCurrentPage('projects')}> Projects </StyledButton>
+              <StyledButton onClick={() => setCurrentPage('contact')}> Contact </StyledButton>
+              <StyledButton >Resume</StyledButton>
+              <StyledButton>
+                <a href="https://github.com/Saya1925" target="_blank" rel="noopener noreferrer">
+                  <FontAwesomeIcon icon={ faGithub } size="2x" color="black"/></a></StyledButton>
+              <StyledButton>
+                <a href="http://www.linkedin.com/in/sayam23" target="_blank" rel="noopener noreferrer">
+                  <FontAwesomeIcon icon={ faLinkedin } size="2x" color="black"/></a></StyledButton>
           </ButtonWrapper>
       </StyledHeader>
 );

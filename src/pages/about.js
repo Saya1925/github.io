@@ -3,20 +3,20 @@ import styled from "styled-components";
 import myself from '../images/myself.png';
 
 const StyledMyselfImg = styled.img`
-  height: 70%;
+  height: 100%;
   width: auto;               
-  padding: 60px;
+  padding: 50px;
   border-radius: 25%;
 
   @media (max-width: 768px) {
     margin-right: 0;
-    width: 100%;
+    width: 50%;
     padding: 20px 0;
   }
 `;
 
 const StyledAbout = styled.div`
-  padding: 0px 300px 10px 300px;
+  padding: 300px 500px 200px 300px;
   background-size: cover;
   height: auto;
   display: flex;
@@ -27,7 +27,7 @@ const StyledAbout = styled.div`
 
   @media (max-width: 768px) {
       flex-direction: column;
-      padding: 50px;
+      padding: 80px;
   }
 `;
 
