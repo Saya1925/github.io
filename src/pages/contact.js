@@ -2,7 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 import BackgroundImage from '../images/background.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope, faMobile } from '@fortawesome/free-solid-svg-icons';Y
+import { faEnvelope, faMobile } from '@fortawesome/free-solid-svg-icons';
 
 const StyledBackgroundImg = styled.div`
   background-image: url(${BackgroundImage});
